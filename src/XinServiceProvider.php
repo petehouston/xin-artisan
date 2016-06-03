@@ -57,6 +57,14 @@ class XinServiceProvider extends ServiceProvider
             }
         );
         $this->commands('command.xin.docs');
+
+        // command: xin:log
+        $this->app['command.xin.log'] = $this->app->share(
+            function ($app) {
+                return new XinLogCommand();
+            }
+        );
+        $this->commands('command.xin.log');
     }
 
     /**
@@ -66,6 +74,6 @@ class XinServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['command.xin.ip', 'command.xin.docs'];
+        return ['command.xin.ip', 'command.xin.docs', 'command.xin.log'];
     }
 }
