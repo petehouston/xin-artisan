@@ -3,6 +3,8 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 
+![Xin Logo](xin-logo.png)
+
 **Xin**, _in Vietnamese_, is to "ask for something on demand". Now, you can **xin** something right into Laravel Artisan console.
 
 ## Install
