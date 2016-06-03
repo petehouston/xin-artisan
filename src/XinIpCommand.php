@@ -2,11 +2,7 @@
 
 namespace Petehouston\Xin;
 
-use Exception;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Process\Process;
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
 
 class XinIpCommand extends Command
 {
@@ -38,7 +34,6 @@ class XinIpCommand extends Command
      * Execute the console command.
      *
      * @return mixed
-     * @throws Exception
      */
     public function handle()
     {
