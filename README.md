@@ -45,6 +45,7 @@ Following commands are supported:
 * [xin:ip](#ask-for-ip-address): get IP address.
 * [xin:docs](#open-a-laravel-documentation-section): read Laravel documentation.
 * [xin:log](#play-with-log-files): play around with log files.
+* [xin:gist](#share-code-via-gist): Share code via public Gist.
 
 ## Usage
 
@@ -188,6 +189,30 @@ $ php artisan xin:log --remove-all
 ```
 
 This command will remove all files in `storage/logs` directory.
+
+### Share code via Gist
+
+This command will share a source file to public Gist. It will response with **Gist Id** and **Gist Url**.
+
+```
+$ php artisan xin:gist [filename] --desc="Sharing description."
+```
+
+For example, if you want to share `public/index.php` file:
+
+```
+$ php artisan xin:gist public/index.php --desc="Sharing Laravel index file."
+Gist Sharing Information
+------------------------------------------------------------------
+Gist Id:  37c55c18cd63c34195c22fafbff6fe16
+Gist Url: https://gist.github.com/37c55c18cd63c34195c22fafbff6fe16
+```
+
+**Note:** on Windows, since the path separator is `\`, so you need to wrap the `filename` with double-quotation mark `"` like this:
+
+```
+$ php artisan xin:gist "public\index.php"
+```
 
 ## License
 
