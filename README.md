@@ -31,7 +31,7 @@ Append this line to `$providers` variable on `config/app.php` file:
 You need to add xin config file `xin.php` to your project:
 
 ```
-$ php artisan vendor:publish --provider=Petehouston\Xin\XinServiceProvider --tag=config
+$ php artisan vendor:publish --provider="Petehouston\Xin\XinServiceProvider" --tag=config
 ```
 
 **Some config variables for use:**
