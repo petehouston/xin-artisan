@@ -1,70 +1,142 @@
-# :package_name
+# Xin for Artisan command
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```:author_name``` ```:author_username``` ```:author_website``` ```:author_email``` ```:vendor``` ```:package_name``` ```:package_description``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+**Xin**, _in Vietnamese_, is to "ask for something on demand". Now, you can **xin** something right into Laravel Artisan console.
 
 ## Install
 
 Via Composer
 
 ``` bash
-$ composer require :vendor/:package_name
+$ composer require petehouston/xin-artisan
+```
+
+### Configuration
+
+Append this line to `$providers` variable on `config/app.php` file:
+
+```
+    'providers' => [
+        ...
+        Petehouston\Xin\XinServiceProvider::class,
+    ]
 ```
 
 ## Usage
 
-``` php
-$skeleton = new League\Skeleton();
-echo $skeleton->echoPhrase('Hello, League!');
+### Ask for IP address
+
+**Get local IP address:**
+
+```
+$ php artisan xin:ip
+Local IP address is: 192.168.100.3
 ```
 
-## Change log
+**Get public/external IP address:**
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
-## Testing
-
-``` bash
-$ composer test
+```
+$ php artisan xin:ip --public
+External IP address is: 13.66.202.129
 ```
 
-## Contributing
+### Open a Laravel documentation section
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+**List all available Laravel documentation sections:**
 
-## Security
+```
+$ php artisan xin:docs list
 
-If you discover any security related issues, please email :author_email instead of using the issue tracker.
+All of Laravel documentation sections are listed below:
++----------------------------+-------------------------+
+| Section                    | Key                     |
++----------------------------+-------------------------+
+| Release Notes              | releases                |
+| Upgrade Guide              | upgrade                 |
+| Contribution Guide         | contributions           |
+| Installation               | installation            |
+| Configuration              | configuration           |
+| Homestead                  | homestead               |
+| Valet                      | valet                   |
+| Basic Task List            | quickstart              |
+| Intermediate Task List     | quickstart-intermediate |
+| Routing                    | routing                 |
+| Middleware                 | middleware              |
+| Controllers                | controllers             |
+| Requests                   | requests                |
+| Responses                  | responses               |
+| Views                      | views                   |
+| Blade Templates            | blade                   |
+| Request Lifecycle          | lifecycle               |
+| Application Structure      | structure               |
+| Service Providers          | providers               |
+| Service Container          | container               |
+| Contracts                  | contracts               |
+| Facades                    | facades                 |
+| Authentication             | authentication          |
+| Authorization              | authorization           |
+| Artisan Console            | artisan                 |
+| Billing                    | billing                 |
+| Cache                      | cache                   |
+| Collections                | collections             |
+| Elixir                     | elixir                  |
+| Encryption                 | encryption              |
+| Errors & Loggin            | errors                  |
+| Events                     | events                  |
+| Filesystem & Cloud Storage | filesystem              |
+| Hashing                    | hashing                 |
+| Helpers                    | helpers                 |
+| Localization               | localization            |
+| Mail                       | mail                    |
+| Package Development        | packages                |
+| Pagination                 | pagination              |
+| Queues                     | queues                  |
+| Redis                      | redis                   |
+| Session                    | session                 |
+| SSH Tasks                  | envoy                   |
+| Task Scheduling            | scheduling              |
+| Testing                    | testing                 |
+| Validation                 | validation              |
+| Database - Getting Started | database                |
+| Query Builder              | queries                 |
+| Migrations                 | migrations              |
+| seeding                    | seeding                 |
+| Eloquent - Getting Started | eloquent                |
+| Relationships              | eloquent-relationships  |
+| Eloquent Collections       | eloquent-collections    |
+| Mutators                   | eloquent-mutators       |
+| Eloquent Serialization     | eloquent-serialization  |
++----------------------------+-------------------------+
+```
 
-## Credits
+**Open the section on browser:**
 
-- [:author_name][link-author]
-- [All Contributors][link-contributors]
+Xin will use the default system browser to open URL. Key is the value available from "list".
+
+```
+$ php artisan xin:docs read --key=envoy
+```
+
+**Open documentation in different languages:**
+
+Use `--locale` option. Currently, only "en" and "vn" are supported. Default is "en".
+
+```
+$ php artisan xin:docs read --key=structure --locale=vn
+```
+
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/:vendor/:package_name.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/petehouston/xin-artisan.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/:vendor/:package_name/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/:vendor/:package_name.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/:vendor/:package_name.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/:vendor/:package_name.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/petehouston/xin-artisan.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/:vendor/:package_name
-[link-travis]: https://travis-ci.org/:vendor/:package_name
-[link-scrutinizer]: https://scrutinizer-ci.com/g/:vendor/:package_name/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/:vendor/:package_name
-[link-downloads]: https://packagist.org/packages/:vendor/:package_name
-[link-author]: https://github.com/:author_username
+[link-packagist]: https://packagist.org/packages/petehouston/xin-artisan
+[link-downloads]: https://packagist.org/packages/petehouston/xin-artisan
+[link-author]: https://github.com/petehouston
 [link-contributors]: ../../contributors
