@@ -141,6 +141,45 @@ Use `--locale` option. Currently, only "en" and "vn" are supported. Default is "
 $ php artisan xin:docs read --key=structure --locale=vn
 ```
 
+### Play with log files
+
+All logs are stored under `storage/logs` directory.
+
+**Read log file**
+
+The default log file is `laravel.log`.
+
+```
+$ php artisan xin:log
+```
+
+You can read content of different log files by name:
+
+```
+$ php artisan xin:log --name=custom.log
+```
+
+**Clean log file content**
+
+```
+$ php artisan xin:log --clean
+```
+
+The log file will be empty.
+
+You can combine clean a custom log file:
+
+```
+$ php artisan xin:log --name=custom.log --clean
+```
+
+**Remove all logs**
+
+```
+$ php artisan xin:log --remove-all
+```
+
+This command will remove all files in `storage/logs` directory.
 
 ## License
 
