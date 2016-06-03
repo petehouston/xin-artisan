@@ -15,7 +15,7 @@ Via Composer
 $ composer require petehouston/xin-artisan
 ```
 
-### Configuration
+### Setup
 
 Append this line to `$providers` variable on `config/app.php` file:
 
@@ -25,6 +25,18 @@ Append this line to `$providers` variable on `config/app.php` file:
         Petehouston\Xin\XinServiceProvider::class,
     ]
 ```
+
+### Configuration
+
+You need to add xin config file `xin.php` to your project:
+
+```
+$ php artisan vendor:publish --provider=Petehouston\Xin\XinServiceProvider --tag=config
+```
+
+**Some config variables for use:**
+
+* `browser.bin`: the absolute path to the browser binary you want to use. Default, xin will automatically look up for you.
 
 ## Usage
 
