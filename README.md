@@ -38,6 +38,14 @@ $ php artisan vendor:publish --provider=Petehouston\Xin\XinServiceProvider --tag
 
 * `browser.bin`: the absolute path to the browser binary you want to use. Default, xin will automatically look up for you.
 
+## Command list
+
+Following commands are supported:
+
+* [xin:ip](#ask-for-ip-address): get IP address.
+* [xin:docs](#open-a-laravel-documentation-section): read Laravel documentation.
+* [xin:log](#play-with-log-files): play around with log files.
+
 ## Usage
 
 ### Ask for IP address
