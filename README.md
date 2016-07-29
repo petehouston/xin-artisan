@@ -46,6 +46,7 @@ Following commands are supported:
 * [xin:docs](#open-a-laravel-documentation-section): read Laravel documentation.
 * [xin:log](#play-with-log-files): play around with log files.
 * [xin:gist](#share-code-via-gist): Share code via public Gist.
+* [xin:view](#create-empty-blade-view): create empty Blade view.
 
 ## Usage
 
