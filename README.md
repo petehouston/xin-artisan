@@ -214,6 +214,24 @@ Gist Url: https://gist.github.com/37c55c18cd63c34195c22fafbff6fe16
 $ php artisan xin:gist "public\index.php"
 ```
 
+### Create empty Blade view
+
+Wanna create Blade view file from command quickly? Use this:
+
+```
+$ php artisan xin:view admin.auth.login
+```
+
+It will create `login.blade.php` at `resources/views/admin/auth`, it also does create any directory that doesn't exist in the path.
+
+Apparently, in Linux/Unix/Mac, you can use `touch`.
+
+```
+$ mkdir resources/views/admin/auth
+$ touch resources/views/admin/auth/login.blade.php
+```
+
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
